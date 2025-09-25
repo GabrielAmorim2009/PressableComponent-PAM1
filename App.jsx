@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Home from './pages/home';
 import Roupas from './pages/roupas';
 import Acessorios from './pages/acessorios';
+import Sobre from './pages/sobre';
 
 const Stack = createStackNavigator();
 
@@ -12,6 +13,7 @@ const image = {uri: 'https://www.edigitalagency.com.au/wp-content/uploads/new-Gu
 export default function App() {
   return (
       <NavigationContainer>
+        
         <Stack.Navigator
             screenOptions={{
             headerStyle: { backgroundColor: '#f5efdb' },
@@ -26,10 +28,13 @@ export default function App() {
               </View>
             ),
           }}
-            initialRouteName="Home">
+            initialRouteName="Home"
+        >
+
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Roupas" component={Roupas} />
           <Stack.Screen name="Acessorios" component={Acessorios} />
+          <Stack.Screen name="Sobre" component={Sobre} />
         </Stack.Navigator>
       </NavigationContainer>
   );
